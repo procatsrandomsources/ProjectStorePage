@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProCats Game Store</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --card-bg: #2b2b2b;
+            --text-color: #ffffff;
+            --accent-color: #fa5c5c; /* itch.io red */
+            --status-bg: rgba(0, 0, 0, 0.7);
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg-color); color: var(--text-color); margin: 0; padding: 20px; }
+        header { text-align: center; padding: 40px 0; }
+        
+        /* Game Grid */
+        .game-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        
+        .game-card { background: var(--card-bg); border-radius: 8px; overflow: hidden; position: relative; transition: transform 0.2s; }
+        .game-card:hover { transform: translateY(-5px); }
+
+        /* Top Left Status */
+        .status-badge { position: absolute; top: 10px; left: 10px; background: var(--status-bg); padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; text-transform: uppercase; z-index: 10; }
+        .active { color: #4caf50; }
+        .coming-soon { color: #ffeb3b; }
+        .discontinued { color: #ff5252; }
+
+        .game-icon { width: 100%; height: 180px; background: #444; object-fit: cover; }
+        .game-info { padding: 15px; }
+        .game-title { font-size: 1.2rem; margin: 0 0 10px 0; }
+        .game-desc { font-size: 0.9rem; color: #ccc; margin-bottom: 15px; min-height: 40px; }
+
+        .download-btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+            width: calc(100% - 40px);
+        }
+        .download-btn:hover { background: #ff7373; }
+        .disabled { background: #555; pointer-events: none; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ProCats Game Sources</h1>
+    <p>Hand-crafted web games and projects</p>
+</header>
+
+<div class="game-grid">
+    <div class="game-card">
+        <div class="status-badge active">Active</div>
+        <img src="https://via.placeholder.com/300x180?text=Web+Games" class="game-icon" alt="Game Icon">
+        <div class="game-info">
+            <h3 class="game-title">WebGames Collection</h3>
+            <p class="game-desc">A variety of fun web-based sources and experiments.</p>
+            <a href="https://procatsrandomsources.github.io/WebGames/" class="download-btn">Play Now</a>
+        </div>
+    </div>
+
+    <div class="game-card">
+        <div class="status-badge coming-soon">Coming Soon</div>
+        <img src="https://via.placeholder.com/300x180?text=Rayworks" class="game-icon" alt="Game Icon">
+        <div class="game-info">
+            <h3 class="game-title">Rayworks</h3>
+            <p class="game-desc">Next-gen lighting engine experiments. Dropping soon!</p>
+            <a href="#" class="download-btn disabled">In Dev</a>
+        </div>
+    </div>
+
+    <div class="game-card">
+        <div class="status-badge discontinued">Discontinued</div>
+        <img src="https://via.placeholder.com/300x180?text=Ray+Runners" class="game-icon" alt="Game Icon">
+        <div class="game-info">
+            <h3 class="game-title">Ray Runners</h3>
+            <p class="game-desc">The high-speed runner project (No longer supported).</p>
+            <a href="#" class="download-btn disabled">Archived</a>
+        </div>
+    </div>
+
+    <div class="game-card">
+        <div class="status-badge discontinued">Discontinued</div>
+        <img src="https://via.placeholder.com/300x180?text=Horror+Works" class="game-icon" alt="Game Icon">
+        <div class="game-info">
+            <h3 class="game-title">Horror Works</h3>
+            <p class="game-desc">Spooky atmosphere and mechanic tests (No longer supported).</p>
+            <a href="#" class="download-btn disabled">Archived</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
